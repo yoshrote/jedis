@@ -215,6 +215,16 @@ abstract class PipelineBase extends Queable implements
         return getResponse(BuilderFactory.LONG);
     }
 
+    public Response<Float> hincrByFloat(String key, String field, float value) {
+        getClient(key).hincrByFloat(key, field, value);
+        return getResponse(BuilderFactory.FLOAT);
+    }
+
+    public Response<Float> hincrByFloat(byte[] key, byte[] field, float value) {
+        getClient(key).hincrByFloat(key, field, value);
+        return getResponse(BuilderFactory.FLOAT);
+    }
+
     public Response<Set<String>> hkeys(String key) {
         getClient(key).hkeys(key);
         return getResponse(BuilderFactory.STRING_SET);

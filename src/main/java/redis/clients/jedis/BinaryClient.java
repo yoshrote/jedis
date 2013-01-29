@@ -238,6 +238,10 @@ public class BinaryClient extends Connection {
 	sendCommand(HINCRBY, key, field, toByteArray(value));
     }
 
+    public void hincrByFloat(final byte[] key, final byte[] field, final float value) {
+    sendCommand(HINCRBYFLOAT, key, field, toByteArray(value));
+    }
+
     public void hexists(final byte[] key, final byte[] field) {
 	sendCommand(HEXISTS, key, field);
     }

@@ -76,6 +76,8 @@ public interface Commands {
 
     public void hincrBy(final String key, final String field, final long value);
 
+    public void hincrByFloat(final String key, final String field, final float value);
+
     public void hexists(final String key, final String field);
 
     public void hdel(final String key, final String... fields);

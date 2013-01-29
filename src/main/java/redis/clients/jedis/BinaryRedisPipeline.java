@@ -46,6 +46,8 @@ public interface BinaryRedisPipeline {
 
     Response<Long> hincrBy(byte[] key, byte[] field, long value);
 
+    Response<Float> hincrByFloat(byte[] key, byte[] field, float value);
+
     Response<Set<byte[]>> hkeys(byte[] key);
 
     Response<Long> hlen(byte[] key);

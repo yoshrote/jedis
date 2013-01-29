@@ -713,6 +713,12 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
 	return client.getIntegerReply();
     }
 
+    public Float hincrByFloat(final String key, final String field, final float value) {
+    checkIsInMulti();
+    client.hincrByFloat(key, field, value);
+    return client.getFloatReply();
+    }
+    
     /**
      * Test for existence of a specified field in a hash.
      * 

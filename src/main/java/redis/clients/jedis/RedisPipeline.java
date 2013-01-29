@@ -49,6 +49,8 @@ public interface RedisPipeline {
 
     Response<Long> hincrBy(String key, String field, long value);
 
+    Response<Float> hincrByFloat(String key, String field, float value);
+
     Response<Set<String>> hkeys(String key);
 
     Response<Long> hlen(String key);

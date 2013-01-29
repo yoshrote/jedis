@@ -176,6 +176,11 @@ public class ShardedJedis extends BinaryShardedJedis implements JedisCommands {
 	return j.hincrBy(key, field, value);
     }
 
+    public Float hincrByFloat(String key, String field, float value) {
+    Jedis j = getShard(key);
+    return j.hincrByFloat(key, field, value);
+    }
+
     public Boolean hexists(String key, String field) {
 	Jedis j = getShard(key);
 	return j.hexists(key, field);

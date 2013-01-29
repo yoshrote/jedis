@@ -44,6 +44,16 @@ public class BuilderFactory {
         }
 
     };
+    public static final Builder<Float> FLOAT = new Builder<Float>() {
+        public Float build(Object data) {
+            return (Float) data;
+        }
+
+        public String toString() {
+            return "float";
+        }
+
+    };
     public static final Builder<String> STRING = new Builder<String>() {
         public String build(Object data) {
             return data == null ? null : SafeEncoder.encode((byte[]) data);

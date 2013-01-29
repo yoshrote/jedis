@@ -64,6 +64,8 @@ public interface JedisCommands {
 
     Long hincrBy(String key, String field, long value);
 
+    Float hincrByFloat(String key, String field, float value);
+
     Boolean hexists(String key, String field);
 
     Long hdel(String key, String... field);

@@ -191,6 +191,12 @@ public class Connection {
         return (Long) Protocol.read(inputStream);
     }
 
+    public Float getFloatReply() {
+        flush();
+        pipelinedCommands--;
+        return Float.valueOf(new String( (byte[]) Protocol.read(inputStream)));
+    }
+
     public List<String> getMultiBulkReply() {
         return BuilderFactory.STRING_LIST.build(getBinaryMultiBulkReply());
     }

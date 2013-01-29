@@ -800,6 +800,12 @@ public class BinaryJedis implements BasicCommands, BinaryJedisCommands, MultiKey
 	return client.getIntegerReply();
     }
 
+    public Float hincrByFloat(final byte[] key, final byte[] field, final float value) {
+    checkIsInMulti();
+    client.hincrByFloat(key, field, value);
+    return client.getFloatReply();
+    }
+
     /**
      * Test for existence of a specified field in a hash.
      * 
